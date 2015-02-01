@@ -16,11 +16,11 @@ include_directories(
 )
 
 add_executable(${PROJECT_NAME} ${project_LIB_SRCS})
-set_target_properties (${PROJECT_NAME}
-   PROPERTIES
-   SOVERSION ${project_VERSION_MAJOR}
-   VERSION ${project_VERSION_STRING}
-)
+#set_target_properties (${PROJECT_NAME}
+#   PROPERTIES
+#   SOVERSION ${project_VERSION_MAJOR}
+#   VERSION ${project_VERSION_STRING}
+#)
 
 target_link_libraries(${PROJECT_NAME} mraa pthread)
 

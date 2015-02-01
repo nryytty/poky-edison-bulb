@@ -51,18 +51,6 @@ include_directories (${SYSTEM_USR_DIR})
 option (GTEST "Build all gtests." OFF)
 option (IPK "Generate IPK using CPack" OFF)
 
-include (TargetArch)
-target_architecture (DETECTED_ARCH)
-message( INFO " - Target arch is ${DETECTED_ARCH}")
-
-if (DETECTED_ARCH STREQUAL "i586" OR DETECTED_ARCH STREQUAL "x86_64" OR DETECTED_ARCH STREQUAL "i386")
-    set (X86PLAT ON)
-elseif (DETECTED_ARCH MATCHES "arm.*")
-    set (ARMPLAT ON)
-else ()
-    message(FATAL_ERROR "Only x86 and arm platforms currently supported")
-endif()
-
 if (GTEST)
     enable_testing ()
     add_subdirectory (tests)
